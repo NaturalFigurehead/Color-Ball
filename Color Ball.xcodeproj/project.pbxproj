@@ -164,6 +164,7 @@
 				TargetAttributes = {
 					5E0DED3619B2D11100473A8A = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = SK4GYS6R4X;
 					};
 					5E0DED4C19B2D11100473A8A = {
 						CreatedOnToolsVersion = 6.0;
@@ -333,9 +334,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Color Ball/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Color Ball";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -344,9 +348,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Color Ball/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Color Ball";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -364,7 +371,7 @@
 				);
 				INFOPLIST_FILE = "Color BallTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Color BallTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Color Ball.app/Color Ball";
 			};
 			name = Debug;
@@ -379,7 +386,7 @@
 				);
 				INFOPLIST_FILE = "Color BallTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Color BallTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Color Ball.app/Color Ball";
 			};
 			name = Release;
@@ -403,6 +410,7 @@
 				5E0DED5919B2D11100473A8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E0DED5A19B2D11100473A8A /* Build configuration list for PBXNativeTarget "Color BallTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +419,7 @@
 				5E0DED5C19B2D11100473A8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

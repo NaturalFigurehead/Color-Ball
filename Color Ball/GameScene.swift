@@ -7,39 +7,53 @@
 //
 
 import SpriteKit
+import UIKit
 
 class GameScene: SKScene {
+    
+    var background = SKShapeNode(circleOfRadius: 1500)
+    var ball1 = SKShapeNode(circleOfRadius: 460)
+    var color1 = SKLabelNode(fontNamed: "Futura-Medium")
+    
+    func randRange (lower: Int , upper: Int) -> CGFloat {
+        return CGFloat(lower + Int(arc4random_uniform(UInt32(upper - lower + 1))))
+    }
+    
+    func colorSettings(){
+        color1.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        color1.fontSize = 200
+        color1.fontColor = SKColor.whiteColor()
+        addChild(color1)
+        color1.zPosition = 2
+    }
+
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
         
-        self.addChild(myLabel)
+        self.addChild(background)
+        self.background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        self.background.fillColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        self.addChild(ball1)
+        self.ball1.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        self.ball1.zPosition = 1
+        self.ball1.fillColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        
+        colorSettings()
+        
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        /* Called when a touch begins */
         
-        for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }
+        self.background.fillColor = UIColor(red: randRange(0, upper: 255) / 255, green: randRange(0, upper: 255) / 255, blue: randRange(0, upper: 255) / 255, alpha: 1)
+        
+        self.ball1.fillColor = UIColor(red: randRange(0, upper: 255) / 255, green: randRange(0, upper: 255) / 255, blue: randRange(0, upper: 255) / 255, alpha: 1)
+        
+        self.color1.text = "\(self.ball1.fillColor)"
+        println(self.color1.text)
+        
     }
-   
+    
     override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
+        self.ball1.strokeColor = self.ball1.fillColor
     }
 }
